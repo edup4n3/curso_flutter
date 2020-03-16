@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
         _infoText = "Obesidade 1(${imc.toStringAsPrecision(3)})";
       }
       else if (imc >=34.9 && imc < 39.9){
-        _infoText = "Obesidade 1(${imc.toStringAsPrecision(3)})";
+        _infoText = "Obesidade 2(${imc.toStringAsPrecision(3)})";
       }
       else if (imc > 40){
         _infoText = "Vá se cuidar(${imc.toStringAsPrecision(3)})";
@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
           title: Text("Calculadora de IMC"),
           centerTitle: true,
-          backgroundColor: Colors.orange,
+          backgroundColor: Colors.black,
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.refresh),
@@ -69,7 +69,7 @@ class _HomeState extends State<Home> {
             )
           ],
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           padding: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 0.0),
           child: Form(
@@ -77,14 +77,14 @@ class _HomeState extends State<Home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Icon(Icons.person_outline, size: 130, color: Colors.orange),
+                Icon(Icons.person_outline, size: 130, color: Colors.black),
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                       labelText: "Peso em KG",
-                      labelStyle: TextStyle(color: Colors.white)),
+                      labelStyle: TextStyle(color: Colors.black)),
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.orange, fontSize: 25.0),
+                  style: TextStyle(color: Colors.black, fontSize: 25.0),
                   controller: weightController,
                   validator: (value) {
                     if(value.isEmpty){
@@ -96,9 +96,9 @@ class _HomeState extends State<Home> {
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                       labelText: "Altura em KG",
-                      labelStyle: TextStyle(color: Colors.white)),
+                      labelStyle: TextStyle(color: Colors.black)),
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.orange, fontSize: 25.0),
+                  style: TextStyle(color: Colors.black, fontSize: 25.0),
                   controller: heightController,
                   validator: (value) {
                     if(value.isEmpty){
@@ -117,16 +117,16 @@ class _HomeState extends State<Home> {
     }                   },
                       child: Text(
                         "Calcular",
-                        style: TextStyle(color: Colors.black, fontSize: 20.0),
+                        style: TextStyle(color: Colors.white, fontSize: 20.0),
                       ),
-                      color: Colors.orange,
+                      color: Colors.black,
                     ),
                   ),
                 ),
                 Text(
                   _infoText,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.orange, fontSize: 25.00),
+                  style: TextStyle(color: Colors.black, fontSize: 25.00),
                 ),
               ],
             ),
