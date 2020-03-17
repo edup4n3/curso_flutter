@@ -21,8 +21,7 @@ void main() async {
   ));
 }
 
-const request =
-    "https://api.hgbrasil.com/finance?format=json-cors&key=cc232204";
+const request ="https://api.hgbrasil.com/finance?format=json-cors&key=cc232204";
 
 Future<Map> getData() async {
   http.Response response = await http.get(request);
@@ -80,42 +79,12 @@ class _HomeState extends State<Home> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Icon(Icons.monetization_on, size: 160.0, color: Colors.amber),
-                      TextField(
-                        decoration: InputDecoration(
-                          labelText: "Reais",
-                          labelStyle: TextStyle(color: Colors.amber),
-                          border: OutlineInputBorder(),
-                          prefixText: "R\$"
-                        ),
-                        style: TextStyle(
-                            color: Colors.amber, fontSize: 25.0
-                        ),
-                      ),
+                      Icon(Icons.monetization_on, size: 100.0, color: Colors.amber),
+                      buildTextFiel("Reais", "R\$"),
                       Divider(),
-                      TextField(
-                        decoration: InputDecoration(
-                            labelText: "Dólar",
-                            labelStyle: TextStyle(color: Colors.amber),
-                            border: OutlineInputBorder(),
-                            prefixText: "U\$\$"
-                        ),
-                        style: TextStyle(
-                            color: Colors.amber, fontSize: 25.0
-                        ),
-                      ),
+                      buildTextFiel("Dólar", "U\$\$"),
                       Divider(),
-                      TextField(
-                        decoration: InputDecoration(
-                            labelText: "Euro",
-                            labelStyle: TextStyle(color: Colors.amber),
-                            border: OutlineInputBorder(),
-                            prefixText: "EU\$"
-                        ),
-                        style: TextStyle(
-                            color: Colors.amber, fontSize: 25.0
-                        ),
-                      )
+                      buildTextFiel("Euro", "EUR"),
                     ],
                   ),
                 );
@@ -125,4 +94,19 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+}
+
+Widget buildTextFiel(String label, String prefix){
+  return  TextField(
+    decoration: InputDecoration(
+        labelText: label,
+        labelStyle: TextStyle(color: Colors.amber),
+        border: OutlineInputBorder(),
+        prefixText: prefix,
+    ),
+    style: TextStyle(
+        color: Colors.amber, fontSize: 25.0
+    ),
+  );
+
 }
